@@ -9,7 +9,6 @@ import {OvertimeHour} from '../../models/overtime-hour';
 })
 export class OvertimeHourEditComponent implements OnInit {
    public overtimeHour: OvertimeHour = new OvertimeHour();
-
    public zilele: Array<{ label: string, value: string }> = [
      { label: '1 Decembrie', value: '1' },
      { label: '25 Decembrie', value: '2' },
@@ -19,6 +18,7 @@ export class OvertimeHourEditComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.overtimeHour.id = 5;
   }
 
 }
