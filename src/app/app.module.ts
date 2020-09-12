@@ -7,6 +7,7 @@ import {AppRoutingModule} from "../app-routing/app-routing.module";
 import {RouterModule} from "@angular/router";
 import {TableModule} from "primeng/table";
 import {CommonModule} from "@angular/common";
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CommonModule} from "@angular/common";
     CommonModule,
     RouterModule,
     AppRoutingModule,
-    TableModule
+    TableModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
