@@ -1,0 +1,13 @@
+.edit-oth {
+  display: flex;
+  flex-flow: row wrap;
+  width: 45%;
+  padding-top: 20px;
+  justify-self: center;
+  align-self: center;
+}
+label {
+  width: 150px;
+  text-align: center;
+  padding-top: 10px;
+}
