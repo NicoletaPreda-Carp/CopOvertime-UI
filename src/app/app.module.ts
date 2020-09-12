@@ -10,6 +10,7 @@ import {CommonModule} from "@angular/common";
 import {ButtonModule} from "primeng/button";
 import {OvertimeHoursModule} from "../overtime-hours/overtime-hours.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ProgramTypesModule} from "../program-types/program-types.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppRoutingModule,
     TableModule,
     ButtonModule,
-    OvertimeHoursModule
+    OvertimeHoursModule,
+    ProgramTypesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
