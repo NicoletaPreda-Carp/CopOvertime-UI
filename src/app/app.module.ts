@@ -10,7 +10,6 @@ import {CommonModule} from "@angular/common";
 import {ButtonModule} from "primeng/button";
 import {OvertimeHoursModule} from "../overtime-hours/overtime-hours.module";
 
-
 @NgModule({
   declarations: [
     AppComponent,
