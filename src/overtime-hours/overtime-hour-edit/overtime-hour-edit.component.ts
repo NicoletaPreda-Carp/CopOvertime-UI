@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {OvertimeHour} from "../../models/overtime-hour";
+import {OvertimeHour} from '../../models/overtime-hour';
 
 
 @Component({
@@ -8,7 +8,13 @@ import {OvertimeHour} from "../../models/overtime-hour";
   styleUrls: ['./overtime-hour-edit.component.css']
 })
 export class OvertimeHourEditComponent implements OnInit {
-   public overtimeHour: OvertimeHour;
+   public overtimeHour: OvertimeHour = new OvertimeHour();
+
+   public zilele: Array<{ label: string, value: string }> = [
+     { label: '1 Decembrie', value: '1' },
+     { label: '25 Decembrie', value: '2' },
+     { label: '26 Decembrie', value: '3' }
+   ];
 
   constructor() { }
 

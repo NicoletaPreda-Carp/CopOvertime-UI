@@ -9,6 +9,7 @@ import {TableModule} from "primeng/table";
 import {CommonModule} from "@angular/common";
 import {ButtonModule} from "primeng/button";
 import {OvertimeHoursModule} from "../overtime-hours/overtime-hours.module";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {OvertimeHoursModule} from "../overtime-hours/overtime-hours.module";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     RouterModule,
     AppRoutingModule,
