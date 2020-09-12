@@ -1,1 +1,39 @@
-<p>overtime-hours works!</p>
+<div class ="OTHours">
+  <div class = "overtime-hours">
+    <p-table class="ptable" [value]="overtimeHours">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>PerformedAt</th>
+          <th>StartedAt</th>
+          <th>EndedAt</th>
+          <th>NumberOfHours</th>
+          <th>ExpiresAt</th>
+          <th>IsWeekend</th>
+          <th>Enabled</th>
+          <th>LegalDayOffId</th>
+          <th>ValidNumberOfDaysId</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-overtimeHour>
+        <tr>
+          <td>{{overtimeHour.id}}</td>
+          <td>{{overtimeHour.performedAt}}</td>
+          <td>{{overtimeHour.startedAt}}</td>
+          <td>{{overtimeHour.endedAt}}</td>
+          <td>{{overtimeHour.numberOfHours}}</td>
+          <td>{{overtimeHour.expiresAt}}</td>
+          <td>{{overtimeHour.isWeekend}}</td>
+          <td>{{overtimeHour.enabled}}</td>
+          <td>{{overtimeHour.legalDayOffId}}</td>
+          <td>{{overtimeHour.validNumberOfDaysId}}</td>
+          <td>
+            <a [routerLink] = "'/overtime-hours-edit/' + overtimeHour.id">Edit</a>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>

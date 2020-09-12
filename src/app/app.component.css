@@ -1,8 +1,13 @@
-
+.app-generic{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
 
 .app-header{
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
 }
 
 .app-logo {
@@ -19,6 +24,7 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  width:100%;
 }
 
 .app-menu-link {

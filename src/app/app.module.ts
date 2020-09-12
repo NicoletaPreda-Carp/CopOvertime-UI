@@ -8,14 +8,13 @@ import {RouterModule} from "@angular/router";
 import {TableModule} from "primeng/table";
 import {CommonModule} from "@angular/common";
 import {ButtonModule} from "primeng/button";
-import {OvertimeHoursComponent} from "../overtime-hours/overtime-hours/overtime-hours.component";
+import {OvertimeHoursModule} from "../overtime-hours/overtime-hours.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
-    OvertimeHoursComponent
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +23,7 @@ import {OvertimeHoursComponent} from "../overtime-hours/overtime-hours/overtime-
     AppRoutingModule,
     TableModule,
     ButtonModule,
+    OvertimeHoursModule
   ],
   providers: [],
   bootstrap: [AppComponent]
