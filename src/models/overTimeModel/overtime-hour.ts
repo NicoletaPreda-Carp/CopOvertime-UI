@@ -1,6 +1,7 @@
-export class OvertimeHour {
-  public id: number;
-  public performedAt: string ;
+import {GenericModel} from "../generic-model";
+
+export class OvertimeHour extends GenericModel {
+  public performedAt: string;
   public startedAt: string;
   public endedAt: string;
   public numberOfHours: number;

@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {TableModule} from "primeng/table";
 import {RouterModule} from "@angular/router";
 import {DropdownModule} from "primeng/dropdown";
+import {CalendarModule} from "primeng/calendar";
 
 @NgModule({
   declarations: [OvertimeHoursComponent, OvertimeHourEditComponent],
@@ -17,6 +18,7 @@ import {DropdownModule} from "primeng/dropdown";
     TableModule,
     DropdownModule,
     RouterModule,
+    CalendarModule
   ]
 })
 export class OvertimeHoursModule { }

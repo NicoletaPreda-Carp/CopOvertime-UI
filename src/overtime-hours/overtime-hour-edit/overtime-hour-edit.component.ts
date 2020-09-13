@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
+import {LegaldayoffService} from "../../services/legaldayoff.service";
+import {OvertimeHoursService} from "../../services/overtime-hours-service";
+import {LegalDayOff} from "../../models/legalDayOffModel/legal-day-off";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -9,16 +13,22 @@ import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
 })
 export class OvertimeHourEditComponent implements OnInit {
    public overtimeHour: OvertimeHour = new OvertimeHour();
-   public zilele: Array<{ label: string, value: string }> = [
-     { label: "1 Decembrie", value: "1" },
-     { label: "25 Decembrie", value: "2" },
-     { label: "26 Decembrie", value: "3" }
-   ];
+   public daysOff: LegalDayOff[] = [];
 
-  constructor() { }
+  constructor(
+    private legalDaysoffService: LegaldayoffService,
+    private service: OvertimeHoursService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.overtimeHour.id = 5;
+    this.legalDaysoffService.getAll().subscribe(daysOff => {
+      this.daysOff = daysOff;
+      this.route.paramMap.subscribe(params => {
+        const id = parseInt(params.get("id"), 10);
+        this.service.getById(id).subscribe(overtimeHour => this.overtimeHour = overtimeHour);
+      });
+    });
   }
 
 }

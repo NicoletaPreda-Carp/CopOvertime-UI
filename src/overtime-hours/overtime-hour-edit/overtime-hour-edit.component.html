@@ -1,14 +1,24 @@
 <div class="edit-oth">
 
   <label>ID<input type="text" pInputText readonly [ngModel]="overtimeHour.id"/></label>
-  <label>Performed at<input type="text" pInputText [(ngModel)]="overtimeHour.performedAt"/></label>
+  <label>Performed at<p-calendar
+    dateFormat="d/mm/yy"
+    [ngModel]="overtimeHour.performedAt | date"
+    (ngModelChange)="overtimeHour.performedAt = $event"
+  ></p-calendar></label>
   <label>Started at<input type="text" pInputText [(ngModel)]="overtimeHour.startedAt"/></label>
   <label>Ended at<input type="text" pInputText [(ngModel)]="overtimeHour.endedAt"/></label>
   <label>Number of hours<input type="text" pInputText [(ngModel)]="overtimeHour.numberOfHours"/></label>
   <label>Expires at<input type="text" pInputText [(ngModel)]="overtimeHour.expiresAt"/></label>
   <label>Is weekend<input type="text" pInputText [(ngModel)]="overtimeHour.isWeekend"/></label>
   <label>Enabled<input type="text" pInputText [(ngModel)]="overtimeHour.enabled"/></label>
-  <label>Legal day off Id<p-dropdown class="drop" [options]="zilele" [(ngModel)]="overtimeHour.legalDayOffId"></p-dropdown></label>
+  <label>Legal day off Id<p-dropdown
+    class="drop"
+    [options]="daysOff"
+    [(ngModel)]="overtimeHour.legalDayOffId"
+    optionLabel="dayOff"
+    dataKey="id"
+  ></p-dropdown></label>
   <label>Valid number of days <input type="text" pInputText [(ngModel)]="overtimeHour.validNumberOfDaysId"/></label>
 
 

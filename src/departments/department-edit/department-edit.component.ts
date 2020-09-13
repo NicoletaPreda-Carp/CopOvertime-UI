@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import {Department} from "../../models/departmentModel/department";
 import {DepartmentsService} from "../../services/departments.service";
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: "app-department-edit",
@@ -28,10 +28,17 @@ export class DepartmentEditComponent implements OnInit {
   }
 
   save(): void {
-    this.service.save(this.department).subscribe(value => this.department = value);
+    this.service.save(this.department).subscribe(value => {
+      this.department = value;
+      this.gotoList();
+    });
   }
 
   cancel(): void {
+    this.gotoList();
+  }
+
+  gotoList(): void {
     const url = "/departments";
     this.router.navigateByUrl(url);
   }

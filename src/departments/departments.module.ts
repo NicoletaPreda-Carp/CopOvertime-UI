@@ -7,7 +7,7 @@ import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {DepartmentsService} from "../services/departments.service";
-import {ButtonModule} from 'primeng/button';
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [DepartmentsComponent, DepartmentEditComponent],
