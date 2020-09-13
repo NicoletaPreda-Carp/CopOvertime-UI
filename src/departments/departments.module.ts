@@ -5,6 +5,7 @@ import { DepartmentEditComponent } from './department-edit/department-edit.compo
 import {TableModule} from "primeng/table";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {InputTextModule} from "primeng/inputtext";
 
 
 
@@ -14,7 +15,8 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     TableModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    InputTextModule
   ]
 })
 export class DepartmentsModule { }

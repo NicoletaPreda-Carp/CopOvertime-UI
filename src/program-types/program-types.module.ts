@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import { ProgramTypeEditComponent } from './program-type-edit/program-type-edit.component';
 import {TableModule} from "primeng/table";
 import {FormsModule} from "@angular/forms";
+import {InputTextModule} from "primeng/inputtext";
 
 
 
@@ -14,7 +15,8 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     RouterModule,
     TableModule,
-    FormsModule
+    FormsModule,
+    InputTextModule
   ]
 })
 export class ProgramTypesModule { }
