@@ -13,6 +13,25 @@ export abstract class ApiService<T extends GenericModel> {
   }
 
   public getAll(): Observable<T[]> {
-    return this.http.get<T[]>(this.API_SERVER + this.endpoint);
+    const url = this.API_SERVER + this.endpoint;
+    return this.http.get<T[]>(url);
+  }
+
+  public getById(id: number): Observable<T> {
+    const url = this.API_SERVER + this.endpoint + "/" + id;
+    return this.http.get<T>(url);
+  }
+
+  public save(item: T): Observable<T> {
+    const url = this.API_SERVER + this.endpoint;
+    if (item.id > 0) {
+      return this.http.put<T>(url, item);
+    }
+    return this.http.post<T>(url, item);
+  }
+
+  public delete(id: number): Observable<T> {
+    const url = this.API_SERVER + this.endpoint + "/" + id;
+    return this.http.delete<T>(url);
   }
 }

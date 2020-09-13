@@ -3,4 +3,6 @@
   <label>ID<input type="text" pInputText readonly [ngModel]="department.id"/></label>
   <label>Name<input type="text" pInputText [(ngModel)]="department.name"/></label>
 
+  <button pButton type="button" label="Save" (click)="save()"></button>
+  <button pButton type="button" label="Cancel" (click)="cancel()"></button>
 </div>
