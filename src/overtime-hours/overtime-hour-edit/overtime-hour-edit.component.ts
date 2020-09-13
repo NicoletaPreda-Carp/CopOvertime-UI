@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
-import {LegaldayoffService} from "../../services/legaldayoff.service";
-import {OvertimeHoursService} from "../../services/overtime-hours-service";
+import {LegaldayoffService} from "../../services/legal-day-off-service/legaldayoff.service";
+import {OvertimeHoursService} from "../../services/overtime-hours-service/overtime-hours-service";
 import {LegalDayOff} from "../../models/legalDayOffModel/legal-day-off";
 import {ActivatedRoute} from "@angular/router";
 

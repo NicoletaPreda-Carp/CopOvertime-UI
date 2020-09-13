@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import {ApiService} from "./api-service";
-import {Department} from "../models/departmentModel/department";
+import {ApiService} from "../api-service/api-service";
+import {Department} from "../../models/departmentModel/department";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({

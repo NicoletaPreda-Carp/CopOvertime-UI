@@ -1,4 +1,4 @@
-import {GenericModel} from "../generic-model";
+import {GenericModel} from "../genericModel/generic-model";
 
 export class EmployeeRank extends GenericModel {
   public employeeId: number;

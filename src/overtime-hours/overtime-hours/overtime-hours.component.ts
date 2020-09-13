@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
-import {OvertimeHoursService} from '../../services/overtime-hours-service';
+import {OvertimeHoursService} from '../../services/overtime-hours-service/overtime-hours-service';
 
 @Component({
   selector: "app-overtime-hours",

@@ -1,4 +1,4 @@
-import {GenericModel} from "../generic-model";
+import {GenericModel} from "../genericModel/generic-model";
 
 export class OvertimeHour extends GenericModel {
   public performedAt: string;

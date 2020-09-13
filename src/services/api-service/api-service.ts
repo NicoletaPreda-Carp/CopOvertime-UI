@@ -1,9 +1,9 @@
-import {GenericModel} from "../models/generic-model";
+import {GenericModel} from "../../models/genericModel/generic-model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 export abstract class ApiService<T extends GenericModel> {
-  private readonly API_SERVER = "http://localhost:8082";
+  private readonly API_SERVER = "http://localhost:8080";
   private http: HttpClient;
 
   protected endpoint = "";

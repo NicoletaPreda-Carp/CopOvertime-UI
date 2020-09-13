@@ -6,7 +6,7 @@ import {TableModule} from "primeng/table";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
-import {DepartmentsService} from "../services/departments.service";
+import {DepartmentsService} from "../services/department-service/departments.service";
 import {ButtonModule} from "primeng/button";
 
 @NgModule({
