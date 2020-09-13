@@ -1,4 +1,5 @@
-export class Rank {
-  public id: number;
+import {GenericModel} from "../generic-model";
+
+export class Rank extends GenericModel {
   public type: string;
 }

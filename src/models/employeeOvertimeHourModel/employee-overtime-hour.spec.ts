@@ -1,7 +1,7 @@
-import { EmployeeOvertimeHour } from './employee-overtime-hour';
+import { EmployeeOvertimeHour } from "./employee-overtime-hour";
 
-describe('EmployeeOvertimeHour', () => {
-  it('should create an instance', () => {
+describe("EmployeeOvertimeHour", () => {
+  it("should create an instance", () => {
     expect(new EmployeeOvertimeHour()).toBeTruthy();
   });
 });

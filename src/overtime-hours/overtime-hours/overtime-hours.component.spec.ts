@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { OvertimeHoursComponent } from './overtime-hours.component';
+import { OvertimeHoursComponent } from "./overtime-hours.component";
 
-describe('OvertimeHoursComponent', () => {
+describe("OvertimeHoursComponent", () => {
   let component: OvertimeHoursComponent;
   let fixture: ComponentFixture<OvertimeHoursComponent>;
 
@@ -19,7 +19,7 @@ describe('OvertimeHoursComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

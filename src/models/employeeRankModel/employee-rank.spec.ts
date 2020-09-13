@@ -1,7 +1,7 @@
-import { EmployeeRank } from './employee-rank';
+import { EmployeeRank } from "./employee-rank";
 
-describe('EmployeeRank', () => {
-  it('should create an instance', () => {
+describe("EmployeeRank", () => {
+  it("should create an instance", () => {
     expect(new EmployeeRank()).toBeTruthy();
   });
 });

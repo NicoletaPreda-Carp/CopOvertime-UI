@@ -1,7 +1,7 @@
-import { ValidNumberOfDays } from './valid-number-of-days';
+import { ValidNumberOfDays } from "./valid-number-of-days";
 
-describe('ValidNumberOfDays', () => {
-  it('should create an instance', () => {
+describe("ValidNumberOfDays", () => {
+  it("should create an instance", () => {
     expect(new ValidNumberOfDays()).toBeTruthy();
   });
 });

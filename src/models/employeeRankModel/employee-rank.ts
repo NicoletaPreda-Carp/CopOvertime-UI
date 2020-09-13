@@ -1,5 +1,6 @@
-export class EmployeeRank {
-  public id: number;
+import {GenericModel} from "../generic-model";
+
+export class EmployeeRank extends GenericModel {
   public employeeId: number;
   public rankId: number;
   public startedAt: string;

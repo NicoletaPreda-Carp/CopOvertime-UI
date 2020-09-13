@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ProgramTypeEditComponent } from './program-type-edit.component';
+import { ProgramTypeEditComponent } from "./program-type-edit.component";
 
-describe('ProgramTypeEditComponent', () => {
+describe("ProgramTypeEditComponent", () => {
   let component: ProgramTypeEditComponent;
   let fixture: ComponentFixture<ProgramTypeEditComponent>;
 
@@ -19,7 +19,7 @@ describe('ProgramTypeEditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

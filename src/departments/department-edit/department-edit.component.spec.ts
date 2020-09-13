@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DepartmentEditComponent } from './department-edit.component';
+import { DepartmentEditComponent } from "./department-edit.component";
 
-describe('DepartmentEditComponent', () => {
+describe("DepartmentEditComponent", () => {
   let component: DepartmentEditComponent;
   let fixture: ComponentFixture<DepartmentEditComponent>;
 
@@ -19,7 +19,7 @@ describe('DepartmentEditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
