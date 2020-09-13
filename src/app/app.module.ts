@@ -14,6 +14,7 @@ import {ProgramTypesModule} from "../program-types/program-types.module";
 import {DepartmentsModule} from "../departments/departments.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 
+
 @NgModule({
   declarations: [
     AppComponent,

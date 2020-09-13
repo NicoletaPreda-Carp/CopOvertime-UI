@@ -1,7 +1,9 @@
 .edit-dep{
   display: flex;
   flex-flow: row wrap;
+  flex-direction: column;
   width: 100%;
+  height: 100vh;
   padding-top: 20px;
   justify-self: center;
   align-self: center;
@@ -9,8 +11,21 @@
 label, input {
   width: 160px;
   text-align: center;
-  padding-top: 10px;
   padding-right: 10px;
+  padding-left: 10px;
   margin-right: 10px;
   margin-top: 3px;
 }
+.edit-button{
+  flex-direction: row;
+  display: flex;
+  margin-top: 15px;
+}
+.p-button{
+  width: 80px;
+  height: 25px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
