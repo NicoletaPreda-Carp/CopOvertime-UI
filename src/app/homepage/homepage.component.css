@@ -1,0 +1,18 @@
+.HPBackground{
+  margin-top: 20px;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/HPBackgroundEdited.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.app-description {
+  font-size: 15px;
+  font-style: italic;
+  color: ghostwhite;
+  display: flex;
+  flex-flow: wrap;
+  text-align: center;
+}

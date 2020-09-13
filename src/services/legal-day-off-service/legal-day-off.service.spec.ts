@@ -1,13 +1,13 @@
 import { TestBed } from "@angular/core/testing";
 
-import { LegaldayoffService } from "./legaldayoff.service";
+import { LegalDayOffService } from "./legal-day-off.service";
 
-describe("LegaldayoffService", () => {
-  let service: LegaldayoffService;
+describe("LegaldayOffService", () => {
+  let service: LegalDayOffService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LegaldayoffService);
+    service = TestBed.inject(LegalDayOffService);
   });
 
   it("should be created", () => {

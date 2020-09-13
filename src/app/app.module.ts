@@ -30,7 +30,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     OvertimeHoursModule,
     ProgramTypesModule,
     DepartmentsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     HttpClient
