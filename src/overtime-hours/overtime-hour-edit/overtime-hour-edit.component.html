@@ -12,14 +12,20 @@
   <label>Expires at<input type="text" pInputText [(ngModel)]="overtimeHour.expiresAt"/></label>
   <label>Is weekend<input type="text" pInputText [(ngModel)]="overtimeHour.isWeekend"/></label>
   <label>Enabled<input type="text" pInputText [(ngModel)]="overtimeHour.enabled"/></label>
-  <label>Legal day off Id<p-dropdown
+  <label>Legal day off<p-dropdown
     class="drop"
     [options]="daysOff"
     [(ngModel)]="overtimeHour.legalDayOffId"
     optionLabel="dayOff"
     dataKey="id"
   ></p-dropdown></label>
-  <label>Valid number of days <input type="text" pInputText [(ngModel)]="overtimeHour.validNumberOfDaysId"/></label>
+  <label>Valid number of days <p-dropdown
+    class="drop"
+    [options]="validNumberOfDays"
+    [(ngModel)]="overtimeHour.validNumberOfDaysId"
+    optionLabel="validNumberOfDays"
+    dataKey="id"
+  ></p-dropdown></label>
 
 
 </div>
