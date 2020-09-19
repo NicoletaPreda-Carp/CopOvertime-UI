@@ -19,8 +19,17 @@ export class OvertimeHoursComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.refreshList();
+  }
+
+  refreshList(): void {
     this.service.getAll().subscribe(value => this.overtimeHours = value);
   }
+
+  delete(id: number): void {
+    this.service.delete(id).subscribe(() => this.refreshList());
+  }
+
   add(): void {
     const url = "/overtime-hours-edit/0";
     this.router.navigateByUrl(url);

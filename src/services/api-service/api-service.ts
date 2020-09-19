@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 export abstract class ApiService<T extends GenericModel> {
-  private readonly API_SERVER = "http://localhost:8080";
+  private readonly API_SERVER = "http://localhost:8082";
   private http: HttpClient;
 
   protected endpoint = "";
@@ -24,7 +24,8 @@ export abstract class ApiService<T extends GenericModel> {
 
   public save(item: T): Observable<T> {
     const url = this.API_SERVER + this.endpoint;
-    if (item.id > 0 || item.id == null) {
+    this.beforeSave(item);
+    if (item.id == null || item.id > 0) {
       return this.http.put<T>(url, item);
     }
     return this.http.post<T>(url, item);
@@ -34,4 +35,6 @@ export abstract class ApiService<T extends GenericModel> {
     const url = this.API_SERVER + this.endpoint + "/" + id;
     return this.http.delete<T>(url);
   }
+
+  public beforeSave(item: T): void {}
 }

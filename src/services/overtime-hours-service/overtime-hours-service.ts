@@ -11,4 +11,16 @@ export class OvertimeHoursService extends ApiService<OvertimeHour>{
     super(http);
     this.endpoint = "/api/overtimeHours";
   }
+
+  public beforeSave(item: OvertimeHour): void {
+    (item.endedAt as any) = item.endedAt.toLocaleTimeString();
+    (item.startedAt as any) = item.startedAt.toLocaleTimeString();
+    if (!item.enabled) {
+      item.enabled = false;
+    }
+    if (!item.isWeekend) {
+      item.isWeekend = false;
+    }
+  }
 }
+// never any undefined null false

@@ -1,13 +1,18 @@
 import {GenericModel} from "../genericModel/generic-model";
+import {LegalDayOff} from "../legalDayOffModel/legal-day-off";
+import {ValidNumberOfDays} from "../validNumberOfDaysModel/valid-number-of-days";
 
 export class OvertimeHour extends GenericModel {
-  public performedAt:string;
-  public startedAt: string;
-  public endedAt: string;
+  public performedAt: Date;
+  public startedAt: Date;
+  public endedAt: Date;
   public numberOfHours: number;
-  public expiresAt: string;
+  public expiresAt: Date;
   public isWeekend: boolean;
   public enabled: boolean;
   public legalDayOffId: number;
   public validNumberOfDaysId: number;
+
+  public legalDayOff: LegalDayOff;
+  public validNumberOfDays: ValidNumberOfDays;
 }

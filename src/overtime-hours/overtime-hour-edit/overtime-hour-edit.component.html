@@ -2,33 +2,38 @@
 
   <label>ID<input type="text" pInputText readonly [ngModel]="overtimeHour.id"/></label>
   <label>Performed at<p-calendar
-    dateFormat="d/mm/yy"
-    [ngModel]="overtimeHour.performedAt | date"
-    (ngModelChange)="overtimeHour.performedAt = $event"
+    dateFormat="dd/mm/yy"
+    [(ngModel)]="overtimeHour.performedAt"
   ></p-calendar></label>
-  <label>Started at<input type="text" pInputText [(ngModel)]="overtimeHour.startedAt"/></label>
-  <label>Ended at<input type="text" pInputText [(ngModel)]="overtimeHour.endedAt"/></label>
+  <label>Started at<p-calendar
+    [timeOnly]="true"
+    [(ngModel)]="overtimeHour.startedAt"
+  ></p-calendar></label>
+  <label>Ended at<p-calendar
+    [timeOnly]="true"
+    [(ngModel)]="overtimeHour.endedAt"
+  ></p-calendar></label>
   <label>Number of hours<input type="text" pInputText [(ngModel)]="overtimeHour.numberOfHours"/></label>
-  <label>Expires at<input type="text" pInputText [(ngModel)]="overtimeHour.expiresAt"/></label>
-  <label>Enabled<input type="text" pInputText [(ngModel)]="overtimeHour.enabled"/></label>
+  <label>Expires at<p-calendar
+    dateFormat="dd/mm/yy"
+    [(ngModel)]="overtimeHour.expiresAt"
+  ></p-calendar></label>
+  <p-checkbox [(ngModel)]="overtimeHour.enabled" label="Enabled" [binary]="true"></p-checkbox>
   <label>Legal day off<p-dropdown
     class="drop"
     [options]="daysOff"
-    [(ngModel)]="overtimeHour.legalDayOffId"
+    [(ngModel)]="overtimeHour.legalDayOff"
     optionLabel="dayOff"
     dataKey="id"
   ></p-dropdown></label>
   <label>Valid number of days <p-dropdown
     class="drop"
     [options]="validNumberOfDays"
-    [(ngModel)]="overtimeHour.validNumberOfDaysId"
+    [(ngModel)]="overtimeHour.validNumberOfDays"
     optionLabel="validNumberOfDays"
     dataKey="id"
   ></p-dropdown></label>
-  <label>Is weekend
-    <p-checkbox [(ngModel)]="overtimeHour.isWeekend" label="True" [binary]="true"></p-checkbox>
-    <p-checkbox [(ngModel)]="overtimeHour.isWeekend" label="False" [binary]="false"></p-checkbox>
-  </label>
+  <p-checkbox [(ngModel)]="overtimeHour.isWeekend" label="Is weekend" [binary]="true"></p-checkbox>
 
   <div class="edit-button">
     <button pButton type="button" label="Save" icon="pi pi-check" (click)="save()"></button>
