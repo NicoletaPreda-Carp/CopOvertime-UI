@@ -49,7 +49,7 @@ export class ProgramTypeEditComponent implements OnInit {
   }
 
   gotoList(): void {
-    const url = "/programTypes";
+    const url = "/program-types";
     this.router.navigateByUrl(url);
   }
 }
