@@ -6,7 +6,7 @@
   justify-self: center;
   align-self: center;
 }
-label, input, .drop {
+label, input, .drop, .p-checkbox {
   width: 160px;
   text-align: center;
   padding-top: 10px;

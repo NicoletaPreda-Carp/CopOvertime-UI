@@ -3,4 +3,9 @@
   <label>Name<input type="text" pInputText [(ngModel)]="programType.name"/></label>
   <label>Starts at<input type="text" pInputText [(ngModel)]="programType.startsAt"/></label>
   <label>Ends at<input type="text" pInputText [(ngModel)]="programType.endsAt"/></label>
+
+  <div class="edit-button">
+    <button pButton type="button" label="Save" icon="pi pi-check" (click)="save()"></button>
+    <button pButton type="button" label="Cancel" icon="pi pi-time" (click)="cancel()"></button>
+  </div>
 </div>

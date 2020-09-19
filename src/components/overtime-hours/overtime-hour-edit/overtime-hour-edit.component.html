@@ -18,7 +18,7 @@
     dateFormat="dd/mm/yy"
     [(ngModel)]="overtimeHour.expiresAt"
   ></p-calendar></label>
-  <p-checkbox [(ngModel)]="overtimeHour.enabled" label="Enabled" [binary]="true"></p-checkbox>
+
   <label>Legal day off<p-dropdown
     class="drop"
     [options]="daysOff"
@@ -33,10 +33,12 @@
     optionLabel="validNumberOfDays"
     dataKey="id"
   ></p-dropdown></label>
+  <p-checkbox [(ngModel)]="overtimeHour.enabled" label="Enabled" [binary]="true"></p-checkbox>
   <p-checkbox [(ngModel)]="overtimeHour.isWeekend" label="Is weekend" [binary]="true"></p-checkbox>
 
   <div class="edit-button">
     <button pButton type="button" label="Save" icon="pi pi-check" (click)="save()"></button>
+    &nbsp;
     <button pButton type="button" label="Cancel" icon="pi pi-time" (click)="cancel()"></button>
   </div>
 

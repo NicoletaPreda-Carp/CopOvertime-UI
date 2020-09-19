@@ -1,11 +1,11 @@
 import {Component, OnInit} from "@angular/core";
-import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
-import {LegalDayOffService} from "../../services/legal-day-off-service/legal-day-off.service";
-import {OvertimeHoursService} from "../../services/overtime-hours-service/overtime-hours-service";
-import {LegalDayOff} from "../../models/legalDayOffModel/legal-day-off";
+import {OvertimeHour} from "../../../models/overTimeModel/overtime-hour";
+import {LegalDayOffService} from "../../../services/legal-day-off-service/legal-day-off.service";
+import {OvertimeHoursService} from "../../../services/overtime-hours-service/overtime-hours-service";
+import {LegalDayOff} from "../../../models/legalDayOffModel/legal-day-off";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ValidNumberOfDays} from "../../models/validNumberOfDaysModel/valid-number-of-days";
-import {ValidNumberOfDaysService} from "../../services/valid-number-of-days-service/valid-number-of-days.service";
+import {ValidNumberOfDays} from "../../../models/validNumberOfDaysModel/valid-number-of-days";
+import {ValidNumberOfDaysService} from "../../../services/valid-number-of-days-service/valid-number-of-days.service";
 
 
 @Component({
@@ -41,7 +41,7 @@ export class OvertimeHourEditComponent implements OnInit {
 
   private getLegalDaysOff(): void {
     this.legalDaysOffService.getAll().subscribe(daysOff => {
-      this.daysOff = [{ id: null, dayOff: "N/A" }].concat(daysOff);
+      this.daysOff = [{id: null, dayOff: "N/A"}].concat(daysOff);
       this.setLegalDaysOff();
     });
   }
@@ -73,7 +73,8 @@ export class OvertimeHourEditComponent implements OnInit {
 
   private setNumberOfDays(): void {
     if (this.validNumberOfDays.length > 0 && this.overtimeHour !== undefined) {
-      this.overtimeHour.validNumberOfDays = this.validNumberOfDays.find(vnd => vnd.id === this.overtimeHour.validNumberOfDaysId);
+      this.overtimeHour.validNumberOfDays = this.validNumberOfDays.find
+              (vnd => vnd.id === this.overtimeHour.validNumberOfDaysId);
       if (!this.overtimeHour.validNumberOfDays) {
         this.overtimeHour.validNumberOfDays = this.validNumberOfDays[0];
       }

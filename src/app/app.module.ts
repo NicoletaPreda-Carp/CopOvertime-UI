@@ -8,10 +8,10 @@ import {RouterModule} from "@angular/router";
 import {TableModule} from "primeng/table";
 import {CommonModule} from "@angular/common";
 import {ButtonModule} from "primeng/button";
-import {OvertimeHoursModule} from "../overtime-hours/overtime-hours.module";
+import {OvertimeHoursModule} from "../components/overtime-hours/overtime-hours.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {ProgramTypesModule} from "../program-types/program-types.module";
-import {DepartmentsModule} from "../departments/departments.module";
+import {ProgramTypesModule} from "../components/program-types/program-types.module";
+import {DepartmentsModule} from "../components/departments/departments.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
