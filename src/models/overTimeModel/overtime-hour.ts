@@ -1,7 +1,7 @@
 import {GenericModel} from "../genericModel/generic-model";
 
 export class OvertimeHour extends GenericModel {
-  public performedAt: string;
+  public performedAt:string;
   public startedAt: string;
   public endedAt: string;
   public numberOfHours: number;
