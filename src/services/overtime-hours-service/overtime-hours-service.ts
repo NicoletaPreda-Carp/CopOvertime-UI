@@ -24,10 +24,9 @@ export class OvertimeHoursService extends ApiService<OvertimeHour>{
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
-      timeZoneName: "Europe/Bucharest"
     }
-    const tf = new DateTimeFormat("en-GB", timeOptions);
-    const df = new DateTimeFormat("en-GB", dateOptions);
+    const tf = new DateTimeFormat(undefined, timeOptions);
+    const df = new DateTimeFormat(undefined, dateOptions);
 
     (item.endedAt as any) = tf.format( item.endedAt);
     (item.startedAt as any) = tf.format( item.startedAt);

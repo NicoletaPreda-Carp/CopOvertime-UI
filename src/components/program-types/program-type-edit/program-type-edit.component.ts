@@ -17,15 +17,24 @@ export class ProgramTypeEditComponent implements OnInit {
     private router: Router,
     private service: ProgramTypeService
   ) {
+  }
+
+  private getModel(): void {
     this.route.paramMap
       .subscribe(params => {
         const id = parseInt(params.get("id"), 10);
-        this.service.getById(id).subscribe(value => this.programType = value);
+        if (id > 0) {
+          this.service.getById(id).subscribe(programType => {
+           programType.startsAt = new Date("1970-01-01T" + programType.startsAt + "Z");
+          programType.endsAt = new Date("1970-01-01T" + programType.endsAt + "Z");
+          this.programType = programType;
+          });
+        }
       });
   }
 
-
   ngOnInit(): void {
+    this.getModel()
   }
 
   save(): void {
