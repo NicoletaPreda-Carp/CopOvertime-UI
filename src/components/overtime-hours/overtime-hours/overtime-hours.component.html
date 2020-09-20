@@ -1,5 +1,5 @@
-<div class ="OTHours">
-  <div class = "overtime-hours">
+<div class="OTHours">
+  <div class="overtime-hours">
     <p-table class="ptable" [value]="overtimeHours">
       <ng-template pTemplate="header">
         <tr>
@@ -29,8 +29,9 @@
           <td>{{getLegalDayName(overtimeHour.legalDaysOffId)}}</td>
           <td>{{getValidNumberOfDays(overtimeHour.validNumberOfDaysId)}}</td>
           <td>
-            <a [routerLink] = "'/overtime-hours-edit/' + overtimeHour.id">Edit</a>
-            <a href="" (click)="delete(overtimeHour.id)">Delete</a>
+            <a [routerLink]="'/overtime-hours-edit/' + overtimeHour.id">Edit</a>
+            &nbsp;
+            <a href="#" (click)="delete(overtimeHour.id)">Delete</a>
           </td>
         </tr>
       </ng-template>
@@ -38,4 +39,5 @@
   </div>
 
   <button pButton type="button" label="Add" (click)="add()"></button>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 </div>

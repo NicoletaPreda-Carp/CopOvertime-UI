@@ -63,7 +63,6 @@ export class OvertimeHourEditComponent implements OnInit {
       const id = parseInt(params.get("id"), 10);
       if (id > 0) {
         this.service.getById(id).subscribe(overtimeHour => {
-          console.log(overtimeHour);
           const dateFormatString = "Y-MM-DD";
           const timeFormatString = "HH:mm";
           overtimeHour.endedAt = moment(overtimeHour.endedAt as any as string, timeFormatString).toDate();
@@ -100,7 +99,6 @@ export class OvertimeHourEditComponent implements OnInit {
   save(): void {
     this.overtimeHour.validNumberOfDaysId = this.overtimeHour.validNumberOfDays.id;
     this.overtimeHour.legalDaysOffId = this.overtimeHour.legalDayOff?.id;
-    console.log("Saving model", this.overtimeHour);
     this.service.save(this.overtimeHour).subscribe(value => {
       this.overtimeHour = value;
       this.gotoList();

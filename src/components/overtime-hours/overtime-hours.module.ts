@@ -9,6 +9,9 @@ import {RouterModule} from "@angular/router";
 import {DropdownModule} from "primeng/dropdown";
 import {CalendarModule} from "primeng/calendar";
 import {CheckboxModule} from 'primeng/checkbox';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
+
 
 @NgModule({
   declarations: [OvertimeHoursComponent, OvertimeHourEditComponent],
@@ -20,7 +23,11 @@ import {CheckboxModule} from 'primeng/checkbox';
     DropdownModule,
     RouterModule,
     CalendarModule,
-    CheckboxModule
+    CheckboxModule,
+    ConfirmDialogModule,
+  ],
+  providers:[
+    ConfirmationService,
   ]
 })
 export class OvertimeHoursModule { }

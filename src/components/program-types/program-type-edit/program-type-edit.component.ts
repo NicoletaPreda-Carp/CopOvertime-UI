@@ -16,7 +16,6 @@ export class ProgramTypeEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private service: ProgramTypeService,
-
   ) {
   }
 
@@ -26,9 +25,9 @@ export class ProgramTypeEditComponent implements OnInit {
         const id = parseInt(params.get("id"), 10);
         if (id > 0) {
           this.service.getById(id).subscribe(programType => {
-           programType.startsAt = new Date("1970-01-01T" + programType.startsAt + "Z");
-          programType.endsAt = new Date("1970-01-01T" + programType.endsAt + "Z");
-          this.programType = programType;
+            programType.startsAt = new Date("1970-01-01T" + programType.startsAt + "Z");
+            programType.endsAt = new Date("1970-01-01T" + programType.endsAt + "Z");
+            this.programType = programType;
           });
         }
       });

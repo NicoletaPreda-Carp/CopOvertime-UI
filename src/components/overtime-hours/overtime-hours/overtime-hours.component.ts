@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {ValidNumberOfDaysService} from "../../../services/valid-number-of-days-service/valid-number-of-days.service";
 import {LegalDayOff} from "../../../models/legalDayOffModel/legal-day-off";
 import {ValidNumberOfDays} from "../../../models/validNumberOfDaysModel/valid-number-of-days";
+import {ConfirmationService} from 'primeng/api';
 
 @Component({
   selector: "app-overtime-hours",
@@ -17,11 +18,13 @@ export class OvertimeHoursComponent implements OnInit {
   public daysOff: LegalDayOff[] = [];
   public validNumberOfDays: ValidNumberOfDays[] = [];
 
+
   constructor(
     private router: Router,
     private service: OvertimeHoursService,
     private legalDaysOffService: LegalDayOffService,
-    private validNumberOfDaysService: ValidNumberOfDaysService
+    private validNumberOfDaysService: ValidNumberOfDaysService,
+    public confirmationService: ConfirmationService,
   ) {
   }
 
@@ -40,8 +43,14 @@ export class OvertimeHoursComponent implements OnInit {
       });
   }
 
-  delete(id: number): void {
-    this.service.delete(id).subscribe(() => this.refreshList());
+  delete(id: number): boolean {
+    this.confirmationService.confirm({
+      message: "Are you sure you want to delete this item?",
+      accept: () => {
+        this.service.delete(id).subscribe(() => this.refreshList());
+      }
+    });
+    return false;
   }
 
   add(): void {
