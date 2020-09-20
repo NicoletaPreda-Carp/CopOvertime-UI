@@ -30,9 +30,13 @@ export class OvertimeHoursComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.legalDaysOffService.getAll().subscribe(daysOff => this.daysOff = daysOff);
-    this.validNumberOfDaysService.getAll().subscribe(days => this.validNumberOfDays = days);
-    this.service.getAll().subscribe(value => this.overtimeHours = value);
+    this.legalDaysOffService.getAll()
+      .subscribe(daysOff => {
+        this.validNumberOfDaysService.getAll().subscribe(days => {
+          this.validNumberOfDays = days;
+          this.service.getAll().subscribe(value => this.overtimeHours = value);
+        });
+      });
   }
 
   delete(id: number): void {
