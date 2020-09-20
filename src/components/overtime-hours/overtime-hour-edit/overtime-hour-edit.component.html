@@ -37,9 +37,10 @@
   <p-checkbox [(ngModel)]="overtimeHour.isWeekend" label="Is weekend" [binary]="true"></p-checkbox>
 
   <div class="edit-button">
-    <button pButton type="button" label="Save" icon="pi pi-check" (click)="save()"></button>
+    <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveBoolean()"></button>
     &nbsp;
     <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="cancel()"></button>
   </div>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 
 </div>

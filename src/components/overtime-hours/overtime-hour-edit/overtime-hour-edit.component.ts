@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ValidNumberOfDays} from "../../../models/validNumberOfDaysModel/valid-number-of-days";
 import {ValidNumberOfDaysService} from "../../../services/valid-number-of-days-service/valid-number-of-days.service";
 import * as moment from "moment";
+import {ConfirmationService} from "primeng/api";
 
 @Component({
   selector: "app-overtime-hour-edit",
@@ -23,6 +24,7 @@ export class OvertimeHourEditComponent implements OnInit {
     private legalDaysOffService: LegalDayOffService,
     private validNumberOfDaysService: ValidNumberOfDaysService,
     private service: OvertimeHoursService,
+    private confirmationService: ConfirmationService,
     private route: ActivatedRoute,
     private router: Router,
   ) {
@@ -42,7 +44,7 @@ export class OvertimeHourEditComponent implements OnInit {
   private getLegalDaysOff(): void {
     this.legalDaysOffService.getAll().subscribe(daysOff => {
       this.daysOff = daysOff.map(dayOff => {
-        if(dayOff.id === 0){
+        if (dayOff.id === 0) {
           dayOff.dayOff = "N/A";
         }
         return dayOff;
@@ -80,7 +82,7 @@ export class OvertimeHourEditComponent implements OnInit {
   private setNumberOfDays(): void {
     if (this.validNumberOfDays.length > 0 && this.overtimeHour !== undefined) {
       this.overtimeHour.validNumberOfDays = this.validNumberOfDays.find
-              (vnd => vnd.id === this.overtimeHour.validNumberOfDaysId);
+      (vnd => vnd.id === this.overtimeHour.validNumberOfDaysId);
       if (!this.overtimeHour.validNumberOfDays) {
         this.overtimeHour.validNumberOfDays = this.validNumberOfDays[0];
       }
@@ -96,7 +98,7 @@ export class OvertimeHourEditComponent implements OnInit {
     }
   }
 
-  save(): void {
+  saveVoid(): void {
     this.overtimeHour.validNumberOfDaysId = this.overtimeHour.validNumberOfDays.id;
     this.overtimeHour.legalDaysOffId = this.overtimeHour.legalDayOff?.id;
     this.service.save(this.overtimeHour).subscribe(value => {
@@ -104,6 +106,17 @@ export class OvertimeHourEditComponent implements OnInit {
       this.gotoList();
     });
   }
+
+  saveBoolean(): boolean {
+    this.confirmationService.confirm({
+      message: "Are you sure you want to save this item?",
+      accept: () => {
+        this.saveVoid();
+      }
+    });
+    return false;
+  }
+
 
   cancel(): void {
     this.gotoList();
