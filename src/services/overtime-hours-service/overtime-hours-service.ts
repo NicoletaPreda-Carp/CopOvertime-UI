@@ -2,8 +2,7 @@ import { Injectable } from "@angular/core";
 import {ApiService} from "../api-service/api-service";
 import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
 import {HttpClient} from "@angular/common/http";
-import DateTimeFormat = Intl.DateTimeFormat;
-import DateTimeFormatOptions = Intl.DateTimeFormatOptions;
+import * as moment from "moment";
 
 @Injectable({
   providedIn: "root"
@@ -15,23 +14,16 @@ export class OvertimeHoursService extends ApiService<OvertimeHour>{
   }
 
   public beforeSave(item: OvertimeHour): void {
-    const timeOptions : DateTimeFormatOptions = {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    };
-    const dateOptions: DateTimeFormatOptions = {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }
-    const tf = new DateTimeFormat(undefined, timeOptions);
-    const df = new DateTimeFormat(undefined, dateOptions);
 
-    (item.endedAt as any) = tf.format( item.endedAt);
-    (item.startedAt as any) = tf.format( item.startedAt);
-    (item.performedAt as any) = df.format( item.performedAt);
-    (item.expiresAt as any) = df.format( item.expiresAt);
+    const dateFormatString = "Y-MM-DD";
+    const timeFormatString = "HH:mm";
+
+    (item.performedAt as any) = moment(item.performedAt).format(dateFormatString);
+    (item.expiresAt as any) = moment(item.expiresAt).format(dateFormatString);
+
+    (item.endedAt as any) = moment(item.endedAt).format(timeFormatString);
+    (item.startedAt as any) = moment(item.startedAt).format(timeFormatString);
+
     if (!item.enabled) {
       item.enabled = false;
     }

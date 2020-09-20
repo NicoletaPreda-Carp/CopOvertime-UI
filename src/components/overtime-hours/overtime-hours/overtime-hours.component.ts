@@ -1,8 +1,11 @@
 import {Component, OnInit} from "@angular/core";
 import {OvertimeHour} from "../../../models/overTimeModel/overtime-hour";
-import {OvertimeHoursService} from '../../../services/overtime-hours-service/overtime-hours-service';
+import {OvertimeHoursService} from "../../../services/overtime-hours-service/overtime-hours-service";
 import {LegalDayOffService} from "../../../services/legal-day-off-service/legal-day-off.service";
 import {Router} from "@angular/router";
+import {ValidNumberOfDaysService} from "../../../services/valid-number-of-days-service/valid-number-of-days.service";
+import {LegalDayOff} from "../../../models/legalDayOffModel/legal-day-off";
+import {ValidNumberOfDays} from "../../../models/validNumberOfDaysModel/valid-number-of-days";
 
 @Component({
   selector: "app-overtime-hours",
@@ -11,10 +14,14 @@ import {Router} from "@angular/router";
 })
 export class OvertimeHoursComponent implements OnInit {
   public overtimeHours: OvertimeHour[] = [];
+  public daysOff: LegalDayOff[] = [];
+  public validNumberOfDays: ValidNumberOfDays[] = [];
 
   constructor(
     private router: Router,
     private service: OvertimeHoursService,
+    private legalDaysOffService: LegalDayOffService,
+    private validNumberOfDaysService: ValidNumberOfDaysService
   ) {
   }
 
@@ -23,6 +30,8 @@ export class OvertimeHoursComponent implements OnInit {
   }
 
   refreshList(): void {
+    this.legalDaysOffService.getAll().subscribe(daysOff => this.daysOff = daysOff);
+    this.validNumberOfDaysService.getAll().subscribe(days => this.validNumberOfDays = days);
     this.service.getAll().subscribe(value => this.overtimeHours = value);
   }
 
@@ -33,5 +42,15 @@ export class OvertimeHoursComponent implements OnInit {
   add(): void {
     const url = "/overtime-hours-edit/0";
     this.router.navigateByUrl(url);
+  }
+
+  getLegalDayName(id: number): string {
+    const dayOffModel = this.daysOff.find(dayOff => dayOff.id === id);
+    return dayOffModel ? dayOffModel.dayOff : "N/A";
+  }
+
+  getValidNumberOfDays(id: number): number {
+    const dayModel = this.validNumberOfDays.find(day => day.id === id);
+    return dayModel ? dayModel.validNumberOfDays : -1;
   }
 }

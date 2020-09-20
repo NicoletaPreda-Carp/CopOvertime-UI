@@ -6,7 +6,7 @@ import {LegalDayOff} from "../../../models/legalDayOffModel/legal-day-off";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ValidNumberOfDays} from "../../../models/validNumberOfDaysModel/valid-number-of-days";
 import {ValidNumberOfDaysService} from "../../../services/valid-number-of-days-service/valid-number-of-days.service";
-
+import * as moment from "moment";
 
 @Component({
   selector: "app-overtime-hour-edit",
@@ -58,11 +58,12 @@ export class OvertimeHourEditComponent implements OnInit {
       const id = parseInt(params.get("id"), 10);
       if (id > 0) {
         this.service.getById(id).subscribe(overtimeHour => {
-          console.log(overtimeHour);
-          overtimeHour.endedAt = new Date("1970-01-01T" + overtimeHour.endedAt + "Z");
-          overtimeHour.startedAt = new Date("1970-01-01T" + overtimeHour.startedAt + "Z");
-          overtimeHour.performedAt = new Date(overtimeHour.performedAt);
-          overtimeHour.expiresAt = new Date(overtimeHour.expiresAt);
+          const dateFormatString = "Y-MM-DD";
+          const timeFormatString = "HH:mm";
+          overtimeHour.endedAt = moment(overtimeHour.endedAt as any as string, timeFormatString).toDate();
+          overtimeHour.startedAt = moment(overtimeHour.startedAt as any as string, timeFormatString).toDate();
+          overtimeHour.performedAt = moment(overtimeHour.performedAt as any as string, dateFormatString).toDate();
+          overtimeHour.expiresAt = moment(overtimeHour.expiresAt as any as string, dateFormatString).toDate();
           this.overtimeHour = overtimeHour;
           this.setLegalDaysOff();
           this.setNumberOfDays();
