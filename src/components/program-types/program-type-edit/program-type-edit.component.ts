@@ -15,7 +15,8 @@ export class ProgramTypeEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: ProgramTypeService
+    private service: ProgramTypeService,
+
   ) {
   }
 

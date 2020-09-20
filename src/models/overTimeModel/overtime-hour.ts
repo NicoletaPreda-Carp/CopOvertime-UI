@@ -10,7 +10,7 @@ export class OvertimeHour extends GenericModel {
   public expiresAt: Date;
   public isWeekend: boolean;
   public enabled: boolean;
-  public legalDayOffId: number;
+  public legalDaysOffId: number;
   public validNumberOfDaysId: number;
 
   public legalDayOff: LegalDayOff;

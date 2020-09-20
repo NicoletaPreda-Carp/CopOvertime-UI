@@ -41,7 +41,12 @@ export class OvertimeHourEditComponent implements OnInit {
 
   private getLegalDaysOff(): void {
     this.legalDaysOffService.getAll().subscribe(daysOff => {
-      this.daysOff = [{id: null, dayOff: "N/A"}].concat(daysOff);
+      this.daysOff = daysOff.map(dayOff => {
+        if(dayOff.id === 0){
+          dayOff.dayOff = "N/A";
+        }
+        return dayOff;
+      })
       this.setLegalDaysOff();
     });
   }
@@ -58,6 +63,7 @@ export class OvertimeHourEditComponent implements OnInit {
       const id = parseInt(params.get("id"), 10);
       if (id > 0) {
         this.service.getById(id).subscribe(overtimeHour => {
+          console.log(overtimeHour);
           const dateFormatString = "Y-MM-DD";
           const timeFormatString = "HH:mm";
           overtimeHour.endedAt = moment(overtimeHour.endedAt as any as string, timeFormatString).toDate();
@@ -84,7 +90,7 @@ export class OvertimeHourEditComponent implements OnInit {
 
   private setLegalDaysOff(): void {
     if (this.daysOff.length > 0 && this.overtimeHour !== undefined) {
-      this.overtimeHour.legalDayOff = this.daysOff.find(dof => dof.id === this.overtimeHour.legalDayOffId);
+      this.overtimeHour.legalDayOff = this.daysOff.find(dof => dof.id === this.overtimeHour.legalDaysOffId);
       if (!this.overtimeHour.legalDayOff) {
         this.overtimeHour.legalDayOff = this.daysOff[0];
       }
@@ -93,7 +99,7 @@ export class OvertimeHourEditComponent implements OnInit {
 
   save(): void {
     this.overtimeHour.validNumberOfDaysId = this.overtimeHour.validNumberOfDays.id;
-    this.overtimeHour.legalDayOffId = this.overtimeHour.legalDayOff?.id;
+    this.overtimeHour.legalDaysOffId = this.overtimeHour.legalDayOff?.id;
     console.log("Saving model", this.overtimeHour);
     this.service.save(this.overtimeHour).subscribe(value => {
       this.overtimeHour = value;

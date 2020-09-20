@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 import {ApiService} from "../api-service/api-service";
 import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
 import {HttpClient} from "@angular/common/http";
@@ -7,7 +7,7 @@ import * as moment from "moment";
 @Injectable({
   providedIn: "root"
 })
-export class OvertimeHoursService extends ApiService<OvertimeHour>{
+export class OvertimeHoursService extends ApiService<OvertimeHour> {
   constructor(http: HttpClient) {
     super(http);
     this.endpoint = "/api/overtimeHours";
@@ -17,7 +17,7 @@ export class OvertimeHoursService extends ApiService<OvertimeHour>{
 
     const dateFormatString = "Y-MM-DD";
     const timeFormatString = "HH:mm";
-
+    console.log(item);
     (item.performedAt as any) = moment(item.performedAt).format(dateFormatString);
     (item.expiresAt as any) = moment(item.expiresAt).format(dateFormatString);
 
@@ -32,4 +32,5 @@ export class OvertimeHoursService extends ApiService<OvertimeHour>{
     }
   }
 }
+
 // never any undefined null false

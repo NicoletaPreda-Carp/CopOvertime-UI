@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ProgramType} from "../../../models/programTypeModel/program-type";
 import {ProgramTypeService} from "../../../services/program-type-service/program-type.service";
 import {Router} from "@angular/router";
+import {ConfirmationService} from "primeng/api";
 
 @Component({
   selector: "app-program-types",
@@ -15,6 +16,7 @@ export class ProgramTypesComponent implements OnInit {
   constructor(
     private service: ProgramTypeService,
     private router: Router,
+    private confirmationService: ConfirmationService,
   ) {
   }
 
