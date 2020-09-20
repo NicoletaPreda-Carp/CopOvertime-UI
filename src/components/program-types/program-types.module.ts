@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
   declarations: [ProgramTypesComponent, ProgramTypeEditComponent],
@@ -19,6 +20,9 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     InputTextModule,
     ButtonModule,
     ConfirmDialogModule,
+  ],
+  providers:[
+    ConfirmationService,
   ]
 })
 export class ProgramTypesModule { }

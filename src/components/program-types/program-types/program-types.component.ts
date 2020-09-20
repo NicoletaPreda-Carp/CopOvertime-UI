@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ProgramType} from "../../../models/programTypeModel/program-type";
 import {ProgramTypeService} from "../../../services/program-type-service/program-type.service";
 import {Router} from "@angular/router";
-import {ConfirmationService} from "primeng/api";
+import {ConfirmationService} from 'primeng/api';
 
 @Component({
   selector: "app-program-types",
@@ -28,8 +28,14 @@ export class ProgramTypesComponent implements OnInit {
     this.service.getAll().subscribe(value => this.programTypes = value);
   }
 
-  delete(id: number): void {
-    this.service.delete(id).subscribe(() => this.refreshList());
+  delete(id: number): boolean {
+    this.confirmationService.confirm({
+      message: "Are you sure you want to delete this item?",
+      accept: () => {
+        this.service.delete(id).subscribe(() => this.refreshList());
+      }
+    });
+    return false;
   }
 
   add(): void {

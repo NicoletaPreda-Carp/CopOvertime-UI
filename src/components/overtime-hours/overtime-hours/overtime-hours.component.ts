@@ -32,6 +32,7 @@ export class OvertimeHoursComponent implements OnInit {
   refreshList(): void {
     this.legalDaysOffService.getAll()
       .subscribe(daysOff => {
+        this.daysOff = daysOff;
         this.validNumberOfDaysService.getAll().subscribe(days => {
           this.validNumberOfDays = days;
           this.service.getAll().subscribe(value => this.overtimeHours = value);
@@ -50,7 +51,10 @@ export class OvertimeHoursComponent implements OnInit {
 
   getLegalDayName(id: number): string {
     const dayOffModel = this.daysOff.find(dayOff => dayOff.id === id);
-    return dayOffModel ? dayOffModel.dayOff : "N/A";
+    if (dayOffModel.id === 0) {
+      dayOffModel.dayOff = "N/A";
+    }
+    return dayOffModel ? dayOffModel.dayOff : "Not found";
   }
 
   getValidNumberOfDays(id: number): number {
