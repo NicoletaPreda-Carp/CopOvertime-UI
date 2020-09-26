@@ -19,11 +19,11 @@
       <ng-template pTemplate="body" let-overtimeHour >
         <tr>
           <td>{{overtimeHour.id}}</td>
-          <td>{{overtimeHour.performedAt}}</td>
-          <td>{{overtimeHour.startedAt}}</td>
-          <td>{{overtimeHour.endedAt}}</td>
+          <td>{{displayListFormatedDate(overtimeHour.performedAt)}}</td>
+          <td>{{displayListFormatedTime(overtimeHour.startedAt)}}</td>
+          <td>{{displayListFormatedTime(overtimeHour.endedAt)}}</td>
           <td>{{overtimeHour.numberOfHours}}</td>
-          <td>{{overtimeHour.expiresAt}}</td>
+          <td>{{displayListFormatedDate(overtimeHour.expiresAt)}}</td>
           <td>{{overtimeHour.isWeekend}}</td>
           <td>{{overtimeHour.enabled}}</td>
           <td>{{getLegalDayName(overtimeHour.legalDaysOffId)}}</td>

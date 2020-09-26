@@ -19,7 +19,6 @@ export class OvertimeHoursComponent implements OnInit {
   public daysOff: LegalDayOff[] = [];
   public validNumberOfDays: ValidNumberOfDays[] = [];
 
-
   constructor(
     private router: Router,
     private service: OvertimeHoursService,
@@ -37,12 +36,20 @@ export class OvertimeHoursComponent implements OnInit {
     this.legalDaysOffService.getAll()
       .subscribe(daysOff => {
         this.daysOff = daysOff;
+        this.adjustDaysOffArray();
         this.validNumberOfDaysService.getAll().subscribe(days => {
           this.validNumberOfDays = days;
           this.service.getAll().subscribe(value =>
             this.overtimeHours = value);
         });
       });
+  }
+
+  adjustDaysOffArray(): void {
+    this.daysOff = this.daysOff.map(dayOff => {
+      dayOff.dayOff = moment(dayOff.dayOff, "Y-MM-DD").format("DD-MM-Y");
+      return dayOff;
+    });
   }
 
   delete(id: number): boolean {
@@ -73,15 +80,13 @@ export class OvertimeHoursComponent implements OnInit {
     return dayModel ? dayModel.validNumberOfDays : -1;
   }
 
- displayListFormatedDate(overtimeHour: OvertimeHour) : void {
+ displayListFormatedDate(dateObject: Date): string {
    const dateFormatString = "DD-MM-Y";
-   overtimeHour.performedAt = moment(overtimeHour.performedAt as any as string, dateFormatString).toDate();
-   overtimeHour.expiresAt = moment(overtimeHour.expiresAt as any as string, dateFormatString).toDate();
+   return moment(dateObject).format(dateFormatString);
   }
 
-  displayListFormatedTime(overtimeHour: OvertimeHour) : void {
+  displayListFormatedTime(dateObject: string): string {
     const timeFormatString = "HH:mm";
-    overtimeHour.endedAt = moment(overtimeHour.endedAt as any as string, timeFormatString).toDate();
-    overtimeHour.startedAt = moment(overtimeHour.startedAt as any as string, timeFormatString).toDate();
+    return moment(dateObject, "HH:mm:ss").format(timeFormatString);
   }
 }
