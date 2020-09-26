@@ -13,6 +13,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ProgramTypesModule} from "../components/program-types/program-types.module";
 import {DepartmentsModule} from "../components/departments/departments.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {LegalDaysOffModule} from "../components/legal-days-off/legal-days-off.module";
+import {RanksModule} from "../components/ransks/ranks.module";
+
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     ProgramTypesModule,
     DepartmentsModule,
     HttpClientModule,
+    LegalDaysOffModule,
+    RanksModule
   ],
   providers: [
     HttpClient

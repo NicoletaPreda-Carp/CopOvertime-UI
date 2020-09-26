@@ -1,11 +1,19 @@
 <div class="edit-programType">
   <label>ID<input type="text" pInputText readonly [ngModel]="programType.id"/></label>
   <label>Name<input type="text" pInputText [(ngModel)]="programType.name"/></label>
-  <label>Starts at<input type="text" pInputText [(ngModel)]="programType.startsAt"/></label>
-  <label>Ends at<input type="text" pInputText [(ngModel)]="programType.endsAt"/></label>
+  <label>Starts at<p-calendar
+    [timeOnly]="true"
+    [(ngModel)]="programType.startsAt"
+  ></p-calendar></label>
+  <label>Ends at<p-calendar
+    [timeOnly]="true"
+    [(ngModel)]="programType.endsAt"
+  ></p-calendar></label>
 
   <div class="edit-button">
-    <button pButton type="button" label="Save" icon="pi pi-check" (click)="save()"></button>
-    <button pButton type="button" label="Cancel" icon="pi pi-time" (click)="cancel()"></button>
+    <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveBoolean()"></button>
+    &nbsp;
+    <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="cancel()"></button>
   </div>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 </div>

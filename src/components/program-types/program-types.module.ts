@@ -9,6 +9,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
+import {CalendarModule} from "primeng/calendar";
 
 @NgModule({
   declarations: [ProgramTypesComponent, ProgramTypeEditComponent],
@@ -20,6 +21,7 @@ import {ConfirmationService} from 'primeng/api';
     InputTextModule,
     ButtonModule,
     ConfirmDialogModule,
+    CalendarModule,
   ],
   providers:[
     ConfirmationService,

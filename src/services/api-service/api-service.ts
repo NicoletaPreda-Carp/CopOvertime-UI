@@ -1,6 +1,7 @@
 import {GenericModel} from "../../models/genericModel/generic-model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
 
 export abstract class ApiService<T extends GenericModel> {
   private readonly API_SERVER = "http://localhost:8080";
@@ -37,4 +38,6 @@ export abstract class ApiService<T extends GenericModel> {
   }
 
   public beforeSave(item: T): void {}
+  public displayListFormatedDate(item: T) : void {}
+
 }

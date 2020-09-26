@@ -3,6 +3,7 @@ import {ApiService} from "../api-service/api-service";
 import {OvertimeHour} from "../../models/overTimeModel/overtime-hour";
 import {HttpClient} from "@angular/common/http";
 import * as moment from "moment";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -14,10 +15,8 @@ export class OvertimeHoursService extends ApiService<OvertimeHour> {
   }
 
   public beforeSave(item: OvertimeHour): void {
-
     const dateFormatString = "Y-MM-DD";
     const timeFormatString = "HH:mm";
-    console.log(item);
     (item.performedAt as any) = moment(item.performedAt).format(dateFormatString);
     (item.expiresAt as any) = moment(item.expiresAt).format(dateFormatString);
 
@@ -31,6 +30,8 @@ export class OvertimeHoursService extends ApiService<OvertimeHour> {
       item.isWeekend = false;
     }
   }
+
+
 }
 
 // never any undefined null false

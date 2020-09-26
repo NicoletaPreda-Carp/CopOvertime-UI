@@ -7,6 +7,7 @@ import {ValidNumberOfDaysService} from "../../../services/valid-number-of-days-s
 import {LegalDayOff} from "../../../models/legalDayOffModel/legal-day-off";
 import {ValidNumberOfDays} from "../../../models/validNumberOfDaysModel/valid-number-of-days";
 import {ConfirmationService} from 'primeng/api';
+import * as moment from "moment";
 
 @Component({
   selector: "app-overtime-hours",
@@ -38,7 +39,8 @@ export class OvertimeHoursComponent implements OnInit {
         this.daysOff = daysOff;
         this.validNumberOfDaysService.getAll().subscribe(days => {
           this.validNumberOfDays = days;
-          this.service.getAll().subscribe(value => this.overtimeHours = value);
+          this.service.getAll().subscribe(value =>
+            this.overtimeHours = value);
         });
       });
   }
@@ -69,5 +71,17 @@ export class OvertimeHoursComponent implements OnInit {
   getValidNumberOfDays(id: number): number {
     const dayModel = this.validNumberOfDays.find(day => day.id === id);
     return dayModel ? dayModel.validNumberOfDays : -1;
+  }
+
+ displayListFormatedDate(overtimeHour: OvertimeHour) : void {
+   const dateFormatString = "DD-MM-Y";
+   overtimeHour.performedAt = moment(overtimeHour.performedAt as any as string, dateFormatString).toDate();
+   overtimeHour.expiresAt = moment(overtimeHour.expiresAt as any as string, dateFormatString).toDate();
+  }
+
+  displayListFormatedTime(overtimeHour: OvertimeHour) : void {
+    const timeFormatString = "HH:mm";
+    overtimeHour.endedAt = moment(overtimeHour.endedAt as any as string, timeFormatString).toDate();
+    overtimeHour.startedAt = moment(overtimeHour.startedAt as any as string, timeFormatString).toDate();
   }
 }

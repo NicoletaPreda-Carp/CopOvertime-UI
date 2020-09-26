@@ -8,6 +8,10 @@ import {ProgramTypesComponent} from "../components/program-types/program-types/p
 import {ProgramTypeEditComponent} from "../components/program-types/program-type-edit/program-type-edit.component";
 import {DepartmentsComponent} from "../components/departments/departments/departments.component";
 import {DepartmentEditComponent} from "../components/departments/department-edit/department-edit.component";
+import {RanksComponent} from "../components/ransks/ranks/ranks.component";
+import {RankEditComponent} from "../components/ransks/rank-edit/rank-edit.component";
+import {LegalDaysOffComponent} from "../components/legal-days-off/legal-days-off/legal-days-off.component";
+import {LegalDayOffEditComponent} from "../components/legal-days-off/legal-day-off-edit/legal-day-off-edit.component";
 
 
 const routes: Routes = [
@@ -18,6 +22,10 @@ const routes: Routes = [
   {path: "program-type-edit/:id", component: ProgramTypeEditComponent},
   {path: "departments", component: DepartmentsComponent},
   {path: "department-edit/:id", component: DepartmentEditComponent},
+  {path: "ranks", component: RanksComponent},
+  {path: "rank-edit/:id", component: RankEditComponent},
+  {path: "legal-days-off", component: LegalDaysOffComponent},
+  {path: "legal-day-off-edit/:id", component: LegalDayOffEditComponent},
 ];
 
 @NgModule({

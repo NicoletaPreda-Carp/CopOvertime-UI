@@ -2,6 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {ProgramType} from "../../../models/programTypeModel/program-type";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProgramTypeService} from "../../../services/program-type-service/program-type.service";
+import * as moment from "moment";
+import {ConfirmationService} from "primeng/api";
 
 @Component({
   selector: "app-program-type-edit",
@@ -16,6 +18,7 @@ export class ProgramTypeEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private service: ProgramTypeService,
+    private confirmationService: ConfirmationService,
   ) {
   }
 
@@ -25,8 +28,9 @@ export class ProgramTypeEditComponent implements OnInit {
         const id = parseInt(params.get("id"), 10);
         if (id > 0) {
           this.service.getById(id).subscribe(programType => {
-            programType.startsAt = new Date("1970-01-01T" + programType.startsAt + "Z");
-            programType.endsAt = new Date("1970-01-01T" + programType.endsAt + "Z");
+            const timeFormatString = "HH:mm";
+            programType.startsAt = moment(programType.startsAt as any as string, timeFormatString).toDate();
+            programType.endsAt = moment(programType.startsAt as any as string, timeFormatString).toDate();
             this.programType = programType;
           });
         }
@@ -37,11 +41,21 @@ export class ProgramTypeEditComponent implements OnInit {
     this.getModel()
   }
 
-  save(): void {
+  saveVoid(): void {
     this.service.save(this.programType).subscribe(value => {
       this.programType = value;
       this.gotoList();
     });
+  }
+
+  saveBoolean(): boolean {
+    this.confirmationService.confirm({
+      message: "Are you sure you want to save this item?",
+      accept: () => {
+        this.saveVoid();
+      }
+    });
+    return false;
   }
 
   cancel(): void {
