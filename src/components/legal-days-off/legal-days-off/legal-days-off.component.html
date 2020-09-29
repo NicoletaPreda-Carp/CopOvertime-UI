@@ -5,6 +5,7 @@
         <tr>
           <th>Id</th>
           <th>Date</th>
+          <th>Name</th>
           <th>Actions</th>
         </tr>
       </ng-template>
@@ -12,6 +13,7 @@
         <tr>
           <td>{{legalDayOff.id}}</td>
           <td>{{legalDayOff.dayOff}}</td>
+          <td>{{legalDayOff.name}}</td>
           <td>
             <a [routerLink] = "'/legal-day-off-edit/' + legalDayOff.id">Edit</a>
           </td>
