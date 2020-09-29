@@ -1,14 +1,7 @@
 <div class="app-generic">
   <div class="app-header">
     <div class="app-logo"></div>
-    <div class="app-menu">
-      <a class="app-menu-link" routerLink=""> HomePage</a>
-      <a class="app-menu-link" routerLink="overtime-hours"> Overtime Hours</a>
-      <a class="app-menu-link" routerLink="program-types"> Program Types</a>
-      <a class="app-menu-link" routerLink="departments"> Departments </a>
-      <a class="app-menu-link" routerLink="ranks"> Ranks</a>
-      <a class="app-menu-link" routerLink="legal-days-off"> Legal Days Off</a>
-    </div>
+    <p-menubar [model]="items"></p-menubar>
   </div>
   <router-outlet></router-outlet>
 </div>

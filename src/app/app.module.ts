@@ -15,13 +15,16 @@ import {DepartmentsModule} from "../components/departments/departments.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {LegalDaysOffModule} from "../components/legal-days-off/legal-days-off.module";
 import {RanksModule} from "../components/ransks/ranks.module";
+import {MenubarModule} from 'primeng/menubar';
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +39,11 @@ import {RanksModule} from "../components/ransks/ranks.module";
     DepartmentsModule,
     HttpClientModule,
     LegalDaysOffModule,
-    RanksModule
+    RanksModule,
+    MenubarModule,
   ],
   providers: [
-    HttpClient
+    HttpClient,
   ],
   bootstrap: [AppComponent]
 })
