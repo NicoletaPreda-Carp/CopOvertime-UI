@@ -47,7 +47,7 @@ export class OvertimeHoursComponent implements OnInit {
 
   adjustDaysOffArray(): void {
     this.daysOff = this.daysOff.map(dayOff => {
-      dayOff.dayOff = moment(dayOff.dayOff, "Y-MM-DD").format("DD-MM-Y");
+      dayOff.dayOff = moment(dayOff.dayOff as any as string, "Y-MM-DD").format("DD-MM-Y");
       return dayOff;
     });
   }

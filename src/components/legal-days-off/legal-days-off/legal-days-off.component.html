@@ -1,1 +1,27 @@
-<p>legal-days-off works!</p>
+<div class ="LDO">
+  <div class = "legalDayOff">
+    <p-table class="ptable" [value]="legalDaysOff">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-legalDayOff>
+        <tr>
+          <td>{{legalDayOff.id}}</td>
+          <td>{{legalDayOff.dayOff}}</td>
+          <td>
+            <a [routerLink] = "'/legal-day-off-edit/' + legalDayOff.id">Edit</a>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <button pButton type="button" label="Add" (click)="add()"></button>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+</div>
+

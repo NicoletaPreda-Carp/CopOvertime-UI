@@ -12,7 +12,7 @@ export class DepartmentsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private service: DepartmentsService
+    private service: DepartmentsService,
   ) {
   }
 

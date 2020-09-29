@@ -8,17 +8,19 @@ import {FormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {DepartmentsService} from "../../services/department-service/departments.service";
 import {ButtonModule} from "primeng/button";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 
 @NgModule({
   declarations: [DepartmentsComponent, DepartmentEditComponent],
-  imports: [
-    CommonModule,
-    TableModule,
-    RouterModule,
-    FormsModule,
-    InputTextModule,
-    ButtonModule
-  ],
+    imports: [
+        CommonModule,
+        TableModule,
+        RouterModule,
+        FormsModule,
+        InputTextModule,
+        ButtonModule,
+        ConfirmDialogModule
+    ],
   providers: [
     DepartmentsService
   ]
