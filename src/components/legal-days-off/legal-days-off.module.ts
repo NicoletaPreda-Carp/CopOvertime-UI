@@ -5,6 +5,8 @@ import { LegalDayOffEditComponent } from './legal-day-off-edit/legal-day-off-edi
 import {RouterModule} from "@angular/router";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {TableModule} from "primeng/table";
+import {FormsModule} from "@angular/forms";
+import {CalendarModule} from "primeng/calendar";
 
 
 
@@ -14,7 +16,9 @@ import {TableModule} from "primeng/table";
     CommonModule,
     RouterModule,
     ConfirmDialogModule,
-    TableModule
+    TableModule,
+    FormsModule,
+    CalendarModule
   ]
 })
 export class LegalDaysOffModule { }

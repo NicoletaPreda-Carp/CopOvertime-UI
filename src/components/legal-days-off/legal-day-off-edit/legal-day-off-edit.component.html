@@ -1,1 +1,15 @@
-<p>legal-day-off-edit works!</p>
+<div class="edit-LDOff">
+  <label>ID<input type="text" pInputText readonly [ngModel]="legalDayOff.id"/></label>
+  <label>Name<input type="text" pInputText [(ngModel)]="legalDayOff.name"/></label>
+  <label>Day Off<p-calendar
+    [(ngModel)]="legalDayOff.dayOff"
+  ></p-calendar></label>
+
+  <div class="edit-button">
+    <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveBoolean()"></button>
+    &nbsp;
+    <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="cancel()"></button>
+  </div>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+</div>
+
