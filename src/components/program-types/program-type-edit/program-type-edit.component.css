@@ -1,4 +1,4 @@
-.edit-programType{
+.edit-programType, .edit-button{
   display: flex;
   flex-flow: row wrap;
   width: 100%;

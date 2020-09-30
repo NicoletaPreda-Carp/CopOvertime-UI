@@ -1,0 +1,16 @@
+.edit-rank, .edit-button{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  padding-top: 20px;
+  justify-self: center;
+  align-self: center;
+}
+label, input {
+  width: 160px;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  margin-top: 3px;
+}

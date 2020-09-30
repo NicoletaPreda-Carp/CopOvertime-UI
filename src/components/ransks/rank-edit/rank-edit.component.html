@@ -1,1 +1,13 @@
-<p>rank-edit works!</p>
+<div class="edit-rank">
+  <label>ID<input type="text" pInputText readonly [ngModel]="rank.id"/></label>
+  &nbsp;
+  <label>Name<input type="text" pInputText [(ngModel)]="rank.type"/></label>
+
+
+  <div class="edit-button">
+    <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveBoolean()"></button>
+    &nbsp;
+    <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="cancel()"></button>
+  </div>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+</div>

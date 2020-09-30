@@ -10,8 +10,8 @@ import {ConfirmationService} from 'primeng/api';
   styleUrls: ["./program-types.component.css"]
 })
 export class ProgramTypesComponent implements OnInit {
-  public programTypes: ProgramType[] = []
 
+  public programTypes: ProgramType[] = [];
 
   constructor(
     private service: ProgramTypeService,

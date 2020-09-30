@@ -12,10 +12,12 @@
       <ng-template pTemplate="body" let-legalDayOff>
         <tr>
           <td>{{legalDayOff.id}}</td>
-          <td>{{legalDayOff.dayOff}}</td>
+          <td>{{displayListFormatedDate(legalDayOff.dayOff)}}</td>
           <td>{{legalDayOff.name}}</td>
           <td>
             <a [routerLink] = "'/legal-day-off-edit/' + legalDayOff.id">Edit</a>
+            &nbsp;
+            <a href="#" (click)="delete(legalDayOff.id)">Delete</a>
           </td>
         </tr>
       </ng-template>
