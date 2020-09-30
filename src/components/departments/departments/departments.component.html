@@ -14,6 +14,8 @@
           <td>{{department.name}}</td>
           <td>
             <a [routerLink] = "'/department-edit/' + department.id">Edit</a>
+            &nbsp;
+            <a href="#" (click)="delete(department.id)">Delete</a>
           </td>
         </tr>
       </ng-template>

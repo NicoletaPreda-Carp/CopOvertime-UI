@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {Department} from "../../../models/departmentModel/department";
 import {DepartmentsService} from "../../../services/department-service/departments.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ConfirmationService} from "primeng/api";
 
 @Component({
   selector: "app-departments",
@@ -13,17 +14,32 @@ export class DepartmentsComponent implements OnInit {
   constructor(
     private router: Router,
     private service: DepartmentsService,
+    private confirmationService: ConfirmationService,
   ) {
   }
 
   public departments: Department[] = [];
 
   ngOnInit(): void {
-    this.service.getAll().subscribe(value => this.departments = value);
+    this.refreshList();
   }
 
   add(): void {
     const url = "/department-edit/0";
     this.router.navigateByUrl(url);
+  }
+
+  refreshList():void{
+    this.service.getAll().subscribe(value => this.departments = value);
+  }
+
+  delete(id: number): boolean {
+    this.confirmationService.confirm({
+      message: "Are you sure you want to delete this item?",
+      accept: () => {
+        this.service.delete(id).subscribe(() => this.refreshList());
+      }
+    });
+    return false;
   }
 }
