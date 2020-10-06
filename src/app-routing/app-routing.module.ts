@@ -29,7 +29,8 @@ const routes: Routes = [
   {path: "legal-days-off", component: LegalDaysOffComponent},
   {path: "legal-day-off-edit/:id", component: LegalDayOffEditComponent},
   {path: "department-programs", component: DepartmentProgramsComponent},
-  {path: "department-programs-edit/:id", component: DepartmentProgramEditComponent},
+  {path: "department-program-edit/:id", component: DepartmentProgramEditComponent},
+
 ];
 
 @NgModule({

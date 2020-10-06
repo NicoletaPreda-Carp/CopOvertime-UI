@@ -1,31 +1,26 @@
-<div class ="DepProg">
-  <div class = "departmentPrograms">
-    <p-table class="ptable", [value]="departmentPrograms">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Id</th>
-          <th>DepartmentId</th>
-          <th>ProgramTypeId</th>
-          <th>Actions</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-departmentPrograms>
-        <tr>
-          <td>{{departmentPrograms.id}}</td>
-          <td>{{departmentPrograms.departmentId}}</td>
-          <td>{{departmentPrograms.programTypeId}}</td>
-          <td>
-            <a [routerLink] = "'/department-program-edit/' + departmentPrograms.id">Edit</a>
-            &nbsp;
-            <a href="#" (click)="delete(departmentPrograms.id)">Delete</a>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
-
+<div class = "DepPrograms">
+  <p-table class="ptable" [value]="departmentPrograms">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Id</th>
+        <th>DepId</th>
+        <th>ProgramId</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-departmentProgram>
+      <tr>
+        <td>{{departmentProgram.id}}</td>
+        <td>{{departmentProgram.departmentId}}</td>
+        <td>{{departmentProgram.programTypeId}}</td>
+        <td>
+          <a [routerLink] = "'/department-program-edit/' + departmentProgram.id">Edit</a>
+          &nbsp;
+          <a href="#" (click)="delete(departmentProgram.id)">Delete</a>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
   <button pButton type="button" label="Add" (click)="add()"></button>
   <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
-
 </div>
-

@@ -16,6 +16,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {LegalDaysOffModule} from "../components/legal-days-off/legal-days-off.module";
 import {RanksModule} from "../components/ransks/ranks.module";
 import {MenubarModule} from 'primeng/menubar';
+import {DepartmentProgramsModule} from "../components/department-programs/department-programs.module";
 
 
 
@@ -41,6 +42,7 @@ import {MenubarModule} from 'primeng/menubar';
     LegalDaysOffModule,
     RanksModule,
     MenubarModule,
+    DepartmentProgramsModule,
   ],
   providers: [
     HttpClient,

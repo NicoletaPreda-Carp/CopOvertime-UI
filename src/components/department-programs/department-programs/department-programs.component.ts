@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {DepartmentProgramService} from "../../../services/department-program-service/department-program.service";
 import {ConfirmationService} from "primeng/api";
-import {DepartmentsService} from "../../../services/department-service/departments.service";
-import {ProgramTypeService} from "../../../services/program-type-service/program-type.service";
+import {DepartmentProgramService} from "../../../services/department-program-service/department-program.service";
 import {DepartmentProgram} from "../../../models/departmentProgramModel/department-program";
 
 @Component({
@@ -17,17 +15,15 @@ export class DepartmentProgramsComponent implements OnInit {
     private router: Router,
     private service: DepartmentProgramService,
     private confirmationService: ConfirmationService,
-    private departmentService: DepartmentsService,
-    private programService: ProgramTypeService,
   ) { }
-
   public departmentPrograms: DepartmentProgram[] = [];
+
   ngOnInit(): void {
     this.refreshList();
   }
 
   add(): void {
-    const url = "/department-programs-edit/0";
+    const url = "/department-edit/0";
     this.router.navigateByUrl(url);
   }
 
@@ -44,5 +40,4 @@ export class DepartmentProgramsComponent implements OnInit {
     });
     return false;
   }
-
 }

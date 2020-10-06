@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DepartmentProgramsComponent } from './department-programs/department-programs.component';
-import { DepartmentProgramEditComponent } from './department-program-edit/department-program-edit.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {DepartmentProgramsComponent} from './department-programs/department-programs.component';
 import {TableModule} from "primeng/table";
 import {RouterModule} from "@angular/router";
-import {ConfirmDialogModule} from "primeng/confirmdialog";
-import {DepartmentsService} from "../../services/department-service/departments.service";
 import {DepartmentProgramService} from "../../services/department-program-service/department-program.service";
-
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import { DepartmentProgramEditComponent } from './department-program-edit/department-program-edit.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,10 +15,11 @@ import {DepartmentProgramService} from "../../services/department-program-servic
     CommonModule,
     TableModule,
     RouterModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    FormsModule
   ],
   providers: [
-    DepartmentProgramService
+    DepartmentProgramService,
   ]
 })
 export class DepartmentProgramsModule { }
