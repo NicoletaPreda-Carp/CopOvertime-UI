@@ -12,6 +12,8 @@ import {RanksComponent} from "../components/ransks/ranks/ranks.component";
 import {RankEditComponent} from "../components/ransks/rank-edit/rank-edit.component";
 import {LegalDaysOffComponent} from "../components/legal-days-off/legal-days-off/legal-days-off.component";
 import {LegalDayOffEditComponent} from "../components/legal-days-off/legal-day-off-edit/legal-day-off-edit.component";
+import {DepartmentProgramsComponent} from "../components/department-programs/department-programs/department-programs.component";
+import {DepartmentProgramEditComponent} from "../components/department-programs/department-program-edit/department-program-edit.component";
 
 
 const routes: Routes = [
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path: "rank-edit/:id", component: RankEditComponent},
   {path: "legal-days-off", component: LegalDaysOffComponent},
   {path: "legal-day-off-edit/:id", component: LegalDayOffEditComponent},
+  {path: "department-programs", component: DepartmentProgramsComponent},
+  {path: "department-programs-edit/:id", component: DepartmentProgramEditComponent},
 ];
 
 @NgModule({
