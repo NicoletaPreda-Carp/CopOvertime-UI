@@ -3,6 +3,10 @@ import {Router} from "@angular/router";
 import {ConfirmationService} from "primeng/api";
 import {DepartmentProgramService} from "../../../services/department-program-service/department-program.service";
 import {DepartmentProgram} from "../../../models/departmentProgramModel/department-program";
+import {ProgramType} from "../../../models/programTypeModel/program-type";
+import {Department} from "../../../models/departmentModel/department";
+import {ProgramTypeService} from "../../../services/program-type-service/program-type.service";
+import {DepartmentsService} from "../../../services/department-service/departments.service";
 
 @Component({
   selector: 'app-department-programs',
@@ -11,12 +15,20 @@ import {DepartmentProgram} from "../../../models/departmentProgramModel/departme
 })
 export class DepartmentProgramsComponent implements OnInit {
 
+  public departmentPrograms: DepartmentProgram[] = [];
+  public programs: ProgramType[] = [];
+  public departments: Department[] = [];
+
   constructor(
     private router: Router,
     private service: DepartmentProgramService,
     private confirmationService: ConfirmationService,
+    private programsService: ProgramTypeService,
+    private departmentsService: DepartmentsService,
   ) { }
-  public departmentPrograms: DepartmentProgram[] = [];
+
+
+
 
   ngOnInit(): void {
     this.refreshList();
@@ -39,5 +51,11 @@ export class DepartmentProgramsComponent implements OnInit {
       }
     });
     return false;
+  }
+
+  getDepartmentName(id: number): string{
+    const dept = this.departments.find(department => department.id === id);
+    console.log(dept);
+    return dept? dept.name : "Not found now";
   }
 }

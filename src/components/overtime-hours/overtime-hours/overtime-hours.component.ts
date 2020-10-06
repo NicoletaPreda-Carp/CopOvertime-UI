@@ -24,7 +24,7 @@ export class OvertimeHoursComponent implements OnInit {
     private service: OvertimeHoursService,
     private legalDaysOffService: LegalDayOffService,
     private validNumberOfDaysService: ValidNumberOfDaysService,
-    public confirmationService: ConfirmationService,
+    private confirmationService: ConfirmationService,
   ) {
   }
 
@@ -76,8 +76,8 @@ export class OvertimeHoursComponent implements OnInit {
   }
 
   getValidNumberOfDays(id: number): number {
-    const dayModel = this.validNumberOfDays.find(day => day.id === id);
-    return dayModel ? dayModel.validNumberOfDays : -1;
+    const numberOfDays = this.validNumberOfDays.find(numberOfDays => numberOfDays.id === id);
+    return numberOfDays ? numberOfDays.validNumberOfDays : -1;
   }
 
  displayListFormatedDate(dateObject: Date): string {
