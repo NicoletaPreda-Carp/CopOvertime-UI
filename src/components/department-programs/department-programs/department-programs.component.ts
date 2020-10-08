@@ -19,6 +19,7 @@ export class DepartmentProgramsComponent implements OnInit {
   public programs: ProgramType[] = [];
   public departments: Department[] = [];
 
+
   constructor(
     private router: Router,
     private service: DepartmentProgramService,
@@ -54,8 +55,8 @@ export class DepartmentProgramsComponent implements OnInit {
   }
 
   getDepartmentName(id: number): string{
-    const dept = this.departments.find(department => department.id === id);
+    const dept = this.departments.find(department => department.id === id).name;
     console.log(dept);
-    return dept? dept.name : "Not found now";
+    return dept ;
   }
 }
