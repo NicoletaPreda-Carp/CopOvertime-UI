@@ -3,3 +3,7 @@ body{
   font-family: "Times New Roman";
   font-size: 12px;
 }
+
+app-homepage {
+  width: 100%;
+}
