@@ -14,24 +14,15 @@
   width: 48px;
   height: 76px;
   background-image: url("../assets/heraldicaPolitiaRomana.png");
-  background-position: center, left;
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 5px;
 
 }
 
-.app-menu{
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-
-}
-
 .p-menubar {
-width: 80%;
+width: 95%;
   display: flex;
   justify-content: center;
 }
