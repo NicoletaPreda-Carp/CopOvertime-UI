@@ -1,26 +1,20 @@
-body, html {
-  height: 100%;
+.homePage{
   display: flex;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 .bg-image {
-
   background-image: url("../../assets/securityPolice.jpg");
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
 
-
-  height: 100%;
+  margin-top: 5px;
   width: 100%;
-
-
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 100vh;
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+
 }
 
 
