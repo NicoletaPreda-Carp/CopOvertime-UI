@@ -12,11 +12,13 @@
 
 .app-logo {
   width: 48px;
-  height: 48px;
+  height: 76px;
   background-image: url("../assets/heraldicaPolitiaRomana.png");
-  background-position: center;
+  background-position: center, left;
   background-size: contain;
   background-repeat: no-repeat;
+  margin-right: 5px;
+
 }
 
 .app-menu{
@@ -29,7 +31,7 @@
 }
 
 .p-menubar {
-width: 100%;
+width: 80%;
   display: flex;
   justify-content: center;
 }
