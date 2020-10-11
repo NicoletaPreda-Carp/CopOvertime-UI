@@ -32,7 +32,7 @@ export class AppComponent {
             items: [{label: 'Department programs', icon: 'pi pi-fw pi-money-bill', routerLink: ["department-programs"]}]
           },
 
-          {label: 'Ranks', icon: 'pi pi-fw pi-angle-double-left', routerLink: ["ranks"]},
+          {label: 'Ranks', icon: 'pi pi-fw pi-star', routerLink: ["ranks"]},
           {label: 'Legal Days Off', icon: 'pi pi-fw pi-calendar-times', routerLink: ["legal-days-off"]},
         ]
       }

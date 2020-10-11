@@ -18,6 +18,7 @@ export class DepartmentProgramsComponent implements OnInit {
   public departmentPrograms: DepartmentProgram[] = [];
   public programs: ProgramType[] = [];
   public departments: Department[] = [];
+  public department: Department = new Department();
 
 
   constructor(
@@ -27,7 +28,6 @@ export class DepartmentProgramsComponent implements OnInit {
     private programsService: ProgramTypeService,
     private departmentsService: DepartmentsService,
   ) { }
-
 
 
 
@@ -54,9 +54,11 @@ export class DepartmentProgramsComponent implements OnInit {
     return false;
   }
 
-  getDepartmentName(id: number): string{
-    const dept = this.departments.find(department => department.id === id).name;
-    console.log(dept);
-    return dept ;
-  }
+  // getDepartmentName(id: number, department: Department): string{
+  //   const dept = this.departments.find(department => department.id === id);
+  //   if (department.id === 0) {
+  //     department.name = "N/A";
+  //   }
+  //   return dept ? department.name: "Not found";
+  // }
 }
