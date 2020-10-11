@@ -11,7 +11,7 @@
     <ng-template pTemplate="body" let-departmentProgram>
       <tr>
         <td>{{departmentProgram.id}}</td>
-        <td>{{departmentProgram.departmentId}}</td>
+        <td>{{getDepartmentName(departmentProgram.departmentId)}}</td>
         <td>{{departmentProgram.programTypeId}}</td>
         <td>
           <a [routerLink] = "'/department-program-edit/' + departmentProgram.id">Edit</a>

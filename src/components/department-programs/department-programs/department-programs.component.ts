@@ -18,7 +18,6 @@ export class DepartmentProgramsComponent implements OnInit {
   public departmentPrograms: DepartmentProgram[] = [];
   public programs: ProgramType[] = [];
   public departments: Department[] = [];
-  public department: Department = new Department();
 
 
   constructor(
@@ -42,6 +41,8 @@ export class DepartmentProgramsComponent implements OnInit {
 
   refreshList():void{
     this.service.getAll().subscribe(value => this.departmentPrograms = value);
+    this.programsService.getAll().subscribe(program => this.programs = program);
+    this.departmentsService.getAll().subscribe(department => this.departments = department);
   }
 
   delete(id: number): boolean {
@@ -54,11 +55,11 @@ export class DepartmentProgramsComponent implements OnInit {
     return false;
   }
 
-  // getDepartmentName(id: number, department: Department): string{
-  //   const dept = this.departments.find(department => department.id === id);
-  //   if (department.id === 0) {
-  //     department.name = "N/A";
-  //   }
-  //   return dept ? department.name: "Not found";
-  // }
+  getDepartmentName(id: number): string{
+    const dept = this.departments.find(department => department.id === id);
+    if (dept.id === 0) {
+      dept.name = "N/A";
+    }
+    return dept ? dept.name: "Not found";
+  }
 }
