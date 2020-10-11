@@ -12,7 +12,7 @@
       <tr>
         <td>{{departmentProgram.id}}</td>
         <td>{{getDepartmentName(departmentProgram.departmentId)}}</td>
-        <td>{{departmentProgram.programTypeId}}</td>
+        <td>{{getProgramName(departmentProgram.programTypeId)}}</td>
         <td>
           <a [routerLink] = "'/department-program-edit/' + departmentProgram.id">Edit</a>
           &nbsp;

@@ -62,4 +62,12 @@ export class DepartmentProgramsComponent implements OnInit {
     }
     return dept ? dept.name: "Not found";
   }
+
+  getProgramName(id: number) : string {
+    const program = this.programs.find(program => program.id === id);
+    if (program.id === 0) {
+      program.name = "N/A";
+    }
+    return program ? program.name: "Not found";
+  }
 }
