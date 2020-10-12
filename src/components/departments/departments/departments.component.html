@@ -5,7 +5,6 @@
         <tr>
           <th>Id</th>
           <th>Name</th>
-          <th>Programs</th>
           <th>Actions</th>
         </tr>
       </ng-template>
@@ -13,7 +12,6 @@
         <tr>
           <td>{{department.id}}</td>
           <td>{{department.name}}</td>
-          <td>""</td>
           <td>
             <a [routerLink] = "'/department-edit/' + department.id">Edit</a>
             &nbsp;

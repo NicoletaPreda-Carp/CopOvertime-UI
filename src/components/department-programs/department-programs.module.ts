@@ -18,7 +18,8 @@ import {DropdownModule} from "primeng/dropdown";
     RouterModule,
     ConfirmDialogModule,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    InplaceModule,
   ],
   providers: [
     DepartmentProgramService,

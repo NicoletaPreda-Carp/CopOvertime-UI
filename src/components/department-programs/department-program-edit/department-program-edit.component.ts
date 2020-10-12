@@ -109,7 +109,6 @@ export class DepartmentProgramEditComponent implements OnInit {
   private getDepartments(): void {
     this.departmentService.getAll().subscribe(department => {
       this.departments = department;
-      console.log(department)
       this.setDepartments();
     });
   }

@@ -1,8 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Department} from "../../../models/departmentModel/department";
 import {DepartmentService} from "../../../services/department-service/department.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ConfirmationService} from "primeng/api";
+import {DepartmentProgramService} from "../../../services/department-program-service/department-program.service";
+import {DepartmentProgram} from "../../../models/departmentProgramModel/department-program";
 
 @Component({
   selector: "app-departments",
@@ -15,10 +17,12 @@ export class DepartmentsComponent implements OnInit {
     private router: Router,
     private service: DepartmentService,
     private confirmationService: ConfirmationService,
+    private departmentProgramService: DepartmentProgramService,
   ) {
   }
 
   public departments: Department[] = [];
+  public departmentPrograms: DepartmentProgram[] = [];
 
   ngOnInit(): void {
     this.refreshList();
@@ -29,7 +33,7 @@ export class DepartmentsComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
-  refreshList():void{
+  refreshList(): void {
     this.service.getAll().subscribe(value => this.departments = value);
   }
 
@@ -41,5 +45,11 @@ export class DepartmentsComponent implements OnInit {
       }
     });
     return false;
+  }
+
+  private getDepartmentPrograms(): void {
+    this.departmentProgramService.getAll().subscribe(departmentProgram => {
+      this.departmentPrograms = departmentProgram;
+    });
   }
 }

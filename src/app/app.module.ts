@@ -43,6 +43,7 @@ import {DepartmentProgramsModule} from "../components/department-programs/depart
     RanksModule,
     MenubarModule,
     DepartmentProgramsModule,
+    InplaceModule,
   ],
   providers: [
     HttpClient,
