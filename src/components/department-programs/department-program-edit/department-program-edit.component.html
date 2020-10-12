@@ -5,10 +5,17 @@
       class="drop"
       [options]="departments"
       [(ngModel)]="departmentProgram.department"
-      optionLabel="department"
+      optionLabel="name"
       dataKey="id"
     ></p-dropdown></label>
-    <label>ProgramTypeId<input type="text" pInputText [(ngModel)]="departmentProgram.programTypeId"/></label>
+    <label>Program Type Name <p-dropdown
+      class="drop"
+      [options]="programs"
+      [(ngModel)]="departmentProgram.program"
+      optionLabel="name"
+      dataKey="id"
+    ></p-dropdown></label>
+
 
   </div>
   &nbsp;
