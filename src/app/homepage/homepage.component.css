@@ -23,11 +23,16 @@
     font-weight: bold;
     border: 3px solid #f1f1f1;
     position: absolute;
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 0;
     width: 80%;
     padding: 20px;
     text-align: center;
+}
+@media only screen and (max-width:480px) {
+  .quote {
+  display: none;
+  }
 }
