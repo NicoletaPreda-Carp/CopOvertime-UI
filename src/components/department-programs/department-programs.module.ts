@@ -7,6 +7,7 @@ import {DepartmentProgramService} from "../../services/department-program-servic
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import { DepartmentProgramEditComponent } from './department-program-edit/department-program-edit.component';
 import {FormsModule} from "@angular/forms";
+import {DropdownModule} from "primeng/dropdown";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {FormsModule} from "@angular/forms";
     TableModule,
     RouterModule,
     ConfirmDialogModule,
-    FormsModule
+    FormsModule,
+    DropdownModule
   ],
   providers: [
     DepartmentProgramService,

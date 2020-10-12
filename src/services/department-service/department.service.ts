@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: "root"
 })
-export class DepartmentsService extends ApiService<Department>{
+export class DepartmentService extends ApiService<Department>{
   constructor(http: HttpClient) {
     super(http);
     this.endpoint = "/api/departments";

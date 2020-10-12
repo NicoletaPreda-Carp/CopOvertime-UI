@@ -6,7 +6,7 @@ import {DepartmentProgram} from "../../../models/departmentProgramModel/departme
 import {ProgramType} from "../../../models/programTypeModel/program-type";
 import {Department} from "../../../models/departmentModel/department";
 import {ProgramTypeService} from "../../../services/program-type-service/program-type.service";
-import {DepartmentsService} from "../../../services/department-service/departments.service";
+import {DepartmentService} from "../../../services/department-service/department.service";
 
 @Component({
   selector: 'app-department-programs',
@@ -25,7 +25,7 @@ export class DepartmentProgramsComponent implements OnInit {
     private service: DepartmentProgramService,
     private confirmationService: ConfirmationService,
     private programsService: ProgramTypeService,
-    private departmentsService: DepartmentsService,
+    private departmentsService: DepartmentService,
   ) { }
 
 

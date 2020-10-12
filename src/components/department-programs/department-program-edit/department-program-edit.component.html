@@ -1,7 +1,13 @@
 <div class="edit-depProgram">
   <div class="edit-Form">
     <label>ID<input type="text" pInputText readonly [ngModel]="departmentProgram.id"/></label>
-    <label>DepId<input type="text" pInputText [(ngModel)]="departmentProgram.departmentId"/></label>
+    <label>Department Name<p-dropdown
+      class="drop"
+      [options]="departments"
+      [(ngModel)]="departmentProgram.department"
+      optionLabel="department"
+      dataKey="id"
+    ></p-dropdown></label>
     <label>ProgramTypeId<input type="text" pInputText [(ngModel)]="departmentProgram.programTypeId"/></label>
 
   </div>

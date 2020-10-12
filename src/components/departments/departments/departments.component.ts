@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {Department} from "../../../models/departmentModel/department";
-import {DepartmentsService} from "../../../services/department-service/departments.service";
+import {DepartmentService} from "../../../services/department-service/department.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ConfirmationService} from "primeng/api";
 
@@ -13,7 +13,7 @@ export class DepartmentsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private service: DepartmentsService,
+    private service: DepartmentService,
     private confirmationService: ConfirmationService,
   ) {
   }

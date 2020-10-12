@@ -7,7 +7,7 @@ export class DepartmentProgram extends GenericModel{
   public programTypeId: number;
 
   public department: Department;
-  public programType: ProgramType;
+  public program: ProgramType;
 
 
 }
