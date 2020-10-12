@@ -35,7 +35,7 @@ export class DepartmentProgramsComponent implements OnInit {
   }
 
   add(): void {
-    const url = "/department-edit/0";
+    const url = "/department-program-edit/0";
     this.router.navigateByUrl(url);
   }
 
